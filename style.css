@@ -9,6 +9,22 @@ body {
     color: rgb(200, 195, 188);
 }
 
+*,  *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+.header, .main, section {
+  width: 100%;
+  background-color: #f0f0f0;
+}
+
 header{
     /* background-color: rgb(166, 0, 79);
     background-image: linear-gradient(135deg, rgb(177, 14, 92), rgb(42, 11, 57)); */
