@@ -1,3 +1,12 @@
+// Smooth scrolling for navigation links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
 //disclaimer:This Javascript Code is not mine, it is from W3Schools. I am using it for educational purposes only.
 
 let slideIndex = 1;
@@ -37,3 +46,15 @@ function showSlides(n) {
   slides[slideIndex - 1].style.display = "block";
   dots[slideIndex - 1].classList.add("active");
 }
+
+// Responsive image loading
+function loadResponsiveImages() {
+    const images = document.querySelectorAll('img[data-src]');
+    images.forEach(img => {
+        const src = window.innerWidth < 768 ? img.getAttribute('data-src-mobile') : img.getAttribute('data-src');
+        img.src = src;
+    });
+}
+
+window.addEventListener('load', loadResponsiveImages);
+window.addEventListener('resize', loadResponsiveImages);
